@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Contribute
+  chapters:
+  - file: contributing.md
+- caption: Manage
+  chapters:
+  - file: manage-zenodo.md
+  - file: manage-db.md
+- caption: Resources
+  chapters:
+  - file: bibliography.md
+  - file: softwares.md
