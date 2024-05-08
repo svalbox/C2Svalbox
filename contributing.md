@@ -13,6 +13,15 @@ Why not give it a try at https://help.zenodo.org/docs/get-started/?
 
 ## Submitting digital outcrop data
 
+
+````{admonition} Finalise the upload
+:class: warning
+
+Zenodo has a 50 GB upload limit per data package.
+Larger uploads will fail and are currently not supported.
+Contact the Svalbox data management team for alternatives, if needed.
+````
+
 ### Creating the data package
 
 #### Standardised data folder structure
@@ -68,6 +77,7 @@ GNSS and gcps (ground control point data) are optional, but should include GNSS 
 Each of the folders must be zipped prior to uploading to maintain the standardised folder structure.
 Files, such as the processing reports, overview photo and description file are to be uploaded separately.
 
+(model:configuration:file)=
 #### The configuration file
 
 Every upload must contain a config.yml file that specifies (some) of the key metadata for the DOM upload.

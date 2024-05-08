@@ -1,3 +1,4 @@
+(zenodo:management)=
 # Zenodo data management
 
 ```{figure} ./figs/zenodo-backend_communities.gif
@@ -46,7 +47,7 @@ The following steps are recommended:
 1. Check the folder structure. Are all images there and in the right folders? Is there GNSS/gcp data? Make sure it is correctly placed. Are the processing reports present in both .html and .pdf formats?
 2. Open the Metashape project. Make sure all files are correctly linked, no missing images are present, and only one chunk exists per project. Also generate the processing reports, if needed.
 3. Check the export folder. If needed, export the mesh/model in .obj format using CRS = EPSG:32633 (the CRS used by the Svalbox DB).
-4. Update the config.yml file. Add in the DOI and update local path links where applicable.
+4. Update the config.yml file. Add in the DOI (that means not doi.org/, but only the part that follows that) and update local path links where applicable.
 
 Note the config.yml file path - as it is needed in the next steps.
 
@@ -66,4 +67,11 @@ If there are large errors in the data, notify the creator and ask them to fix th
 Once you have downloaded the full data set and unzipped all folders into the standardised environment, it it time to head over to the [](svalbox:db:management) tutorial.
 That tutorial will 
 
+````
+
+````{admonition} Successfully updated the Svalbox DB?
+:class: attention
+
+Only once all the steps detailed in [](svalbox:db:management) have been completed, and the database entry has been verified, should you press *Accept and publish*.
+That is the final step after which the data can no longer be updated/modified.
 ````

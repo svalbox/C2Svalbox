@@ -11,6 +11,9 @@ parts:
   chapters:
   - file: manage-zenodo.md
   - file: manage-db.md
+    sections:
+    - file: svaldropbox.md
+    - file: nicegui.md
 - caption: Resources
   chapters:
   - file: bibliography.md
