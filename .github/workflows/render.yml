@@ -47,7 +47,7 @@ jobs:
       - name: Build
         shell: bash -l {0}
         run: |
-          conda install JupyterBook -c conda-forge
+          conda install jupyter-book -c conda-forge
           jupyter book build .
              
       - name: GitHub Pages action
