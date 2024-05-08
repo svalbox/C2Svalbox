@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contributing data to the Svalbox project &#8212; Svalbox Uploading Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zenodo data management" href="manage-zenodo.html" />
+    <link rel="prev" title="Welcome to the Svalbox uploading tutorial" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.webp" class="logo__image only-light" alt="Svalbox Uploading Tutorial - Home"/>
+    <script>document.write(`<img src="_static/logo.webp" class="logo__image only-dark" alt="Svalbox Uploading Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to the Svalbox uploading tutorial
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributing data to the Svalbox project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Manage</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="manage-zenodo.html">Zenodo data management</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manage-db.html">Svalbox DB management</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="svaldropbox.html">Svaldropbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nicegui.html">NiceGUI-Photosphere</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="softwares.html">Softwares</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontributing.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/contributing.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Contributing data to the Svalbox project</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-digital-outcrop-data">Submitting digital outcrop data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-data-package">Creating the data package</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standardised-data-folder-structure">Standardised data folder structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-configuration-file">The configuration file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zenodo-and-data-submission">Zenodo and data submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="contributing-data-to-the-svalbox-project">
+<h1>Contributing data to the Svalbox project<a class="headerlink" href="#contributing-data-to-the-svalbox-project" title="Link to this heading">#</a></h1>
+<p>Community-contributed data resides in the Svalbox community in Zenodo <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="European Organization For Nuclear Research and OpenAIRE. Zenodo. 2013. URL: https://www.zenodo.org/, doi:10.25495/7GXK-RD71.">EuropeanOFNResearchOpenAIRE13</a>]</span> (<a class="reference external" href="https://zenodo.org/communities/svalbox">explore the data sets</a>), a large catch-all repository hosted by CERN and funded through EU Horizons.
+Data sets are individually registered and given a DOI, which provides a fool-proof way of attributing authors and tracking data set use.</p>
+<p>This page details the submission of said data to the Svalbox community in Zenodo.
+Data managers are recommended to visit the data management page <a class="reference internal" href="#"><span class="xref myst">here</span></a>.</p>
+<div class="admonition-visit-the-zenodo-quickstart admonition">
+<p class="admonition-title">Visit the Zenodo quickstart</p>
+<p>This tutorial assumes users have familiarised themselves with Zenodo through the <em>Get started</em> Documentation on Zenodo.
+Why not give it a try at <a class="reference external" href="https://help.zenodo.org/docs/get-started/">https://help.zenodo.org/docs/get-started/</a>?</p>
+</div>
+<section id="submitting-digital-outcrop-data">
+<h2>Submitting digital outcrop data<a class="headerlink" href="#submitting-digital-outcrop-data" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Finalise the upload</p>
+<p>Zenodo has a 50 GB upload limit per data package.
+Larger uploads will fail and are currently not supported.
+Contact the Svalbox data management team for alternatives, if needed.</p>
+</div>
+<section id="creating-the-data-package">
+<h3>Creating the data package<a class="headerlink" href="#creating-the-data-package" title="Link to this heading">#</a></h3>
+<section id="standardised-data-folder-structure">
+<h4>Standardised data folder structure<a class="headerlink" href="#standardised-data-folder-structure" title="Link to this heading">#</a></h4>
+<p>Digital outcrop data are expected to follow a strict standardised format and processing procedure as outlined in the Geo-SfM tutorial (albeit now zipped together on a per-folder basis).
+A more scientific discussion is given by <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="Peter Betlem, Nil Rodés, Thomas Birchall, Anders Dahlin, Aleksandra Smyrak-Sikora, and Kim Senger. Svalbox Digital Model Database: A geoscientific window into the High Arctic. Geosphere, 19(6):1640–1666, September 2023. doi:10.1130/GES02606.1.">BRodesB+23</a>]</span> that details how such standardisation eases the use of automation and the extraction of geoscientific information.
+In its most basic form, a single digital outcrop model data set contains the following folder structure:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Show standardised folder structure<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
+|   overview_img.{ext}
+|   description.txt
+├───config.yml
+├───data.zip
+├───────{img_folder_1}
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────{img_folder_2}
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────...
+├───────{img_folder_n-1}
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────{img_folder_n}
+|           {img_0001}.{ext}
+|           {img_0002}.{ext}
+|           ...
+├───────gcps
+|           
+├───────GNSS
+|           
+├───export.zip (where you place export models and files in)
+|       ...
+├───metashape.zip
+|       {metashape_project_name}.psx
+|       {metashape_project_name}.files
+|       (optionally: {metashape_project_name}.log)
+├───{metashape_project_name}_processing_report.html
+└───{metashape_project_name}_processing_report.pdf                
+        
+</pre></div>
+</div>
+</div>
+</details><p>Each package forms a stand-alone data bundle, meaning that only data used for the generation of the model/data products is present.
+This always includes imagery, ideally sorted per flight/acquisition round.
+GNSS and gcps (ground control point data) are optional, but should include GNSS processing reports and quality estimates of the data when used during processing.
+Each of the folders must be zipped prior to uploading to maintain the standardised folder structure.
+Files, such as the processing reports, overview photo and description file are to be uploaded separately.</p>
+</section>
+<section id="the-configuration-file">
+<span id="model-configuration-file"></span><h4>The configuration file<a class="headerlink" href="#the-configuration-file" title="Link to this heading">#</a></h4>
+<p>Every upload must contain a config.yml file that specifies (some) of the key metadata for the DOM upload.
+These metadata are submitted in a machine-readable form that (upon curation) are ingested by the Svalbox database.
+As such, please make sure that the correct configuration file is used and that all relevant metadata are filled in!</p>
+<p>A template for DOMs is found below.
+Copy this over into your favourite file editing application, fill out the details, and then save it as config.yml at the root of your standardised folder structure.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Show config.yml template<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Outcrop and hand-sized samples</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm</span>
+<span class="nt">acq_camera_model</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera model as indicated in the Agisoft Metashape processing report.</span>
+<span class="nt">acq_date</span><span class="p">:</span><span class="w">  </span><span class="c1"># Acquisition date of data, in DD.MM.YYYY format.</span>
+<span class="nt">acq_georeferencing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">built-in GPS</span><span class="w"> </span><span class="c1"># STRING, pick: built-in GPS, dGPS, GCPs, GCPs/GPS, GCPs/dGPS</span>
+<span class="nt">comments</span><span class="p">:</span><span class="w">  </span><span class="c1"># comments for data entry</span>
+<span class="nt">cover</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Snow</span>
+<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scree</span>
+<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span>
+<span class="nt">data_author</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># affiliations of author in comma-separated list</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of author</span>
+<span class="w">  </span><span class="nt">orcid</span><span class="p">:</span><span class="w">  </span><span class="c1"># orcid ID of author</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># affiliations of author in comma-separated list</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of author</span>
+<span class="w">  </span><span class="nt">orcid</span><span class="p">:</span><span class="w">  </span><span class="c1"># copy paste for number of authors applicable.</span>
+<span class="nt">data_doi</span><span class="p">:</span><span class="w">  </span><span class="c1"># doi number (without https://doi.org/)</span>
+<span class="nt">data_model_file_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">filename</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.obj</span><span class="w"> </span><span class="c1"># STRING with model file name and obj extension.</span>
+<span class="nt">data_model_crs_epsg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32633</span><span class="w"> </span><span class="c1"># INT EPSG number of model CRS</span>
+<span class="nt">data_project_path</span><span class="p">:</span><span class="w">  </span><span class="c1"># STRING with full path to the standardized data project.</span>
+<span class="nt">data_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOM</span><span class="w"> </span><span class="c1"># Data type, defaults to DOM. Other options include DCM, DSM</span>
+<span class="nt">funding</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">grant_number</span><span class="p">:</span><span class="w">  </span><span class="c1"># grant number or name associated with the grant</span>
+<span class="w">  </span><span class="nt">organization</span><span class="p">:</span><span class="w">  </span><span class="c1"># organization identifier</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">grant_number</span><span class="p">:</span><span class="w">  </span><span class="c1"># Copy paste for all applicable combinations.</span>
+<span class="w">  </span><span class="nt">organization</span><span class="p">:</span><span class="w">  </span><span class="c1"># organization identifier #2</span>
+<span class="nt">geology_age</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Era</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from</span>
+<span class="w">  </span><span class="nt">Formation</span><span class="p">:</span><span class="w">  </span><span class="c1">#</span>
+<span class="w">  </span><span class="nt">Group</span><span class="p">:</span><span class="w"> </span><span class="c1">#</span>
+<span class="w">  </span><span class="nt">Period</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Era</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from</span>
+<span class="w">  </span><span class="nt">Formation</span><span class="p">:</span><span class="w">  </span><span class="c1"># Copy paste for all applicable combinations.</span>
+<span class="w">  </span><span class="nt">Group</span><span class="p">:</span><span class="w"> </span><span class="c1">#</span>
+<span class="w">  </span><span class="nt">Period</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick</span>
+<span class="nt">geology_tags</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from Structure/Sedimentology/Metamorphic/Igneous/Quaternary</span>
+<span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from Structure/Sedimentology/Metamorphic/Igneous/Quaternary</span>
+<span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive (select as many combinations as applicable)</span>
+<span class="nt">keywords</span><span class="p">:</span><span class="w">  </span><span class="c1"># list of keywords separated by ;. Last item without.</span>
+<span class="nt">location_island</span><span class="p">:</span><span class="w">  </span><span class="c1"># Island on which the locality is found, pick from Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span>
+<span class="nt">location_land</span><span class="p">:</span><span class="w">  </span><span class="c1"># Land in which the locality is found, pick from Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land</span>
+<span class="nt">location_locality</span><span class="p">:</span><span class="w">  </span><span class="c1"># Location/area in which the locality is found. This should only contain valley/mountain names and not contain directions.</span>
+<span class="nt">model_description</span><span class="p">:</span><span class="w">  </span><span class="c1"># Brief (geological) description of the data.</span>
+<span class="nt">proc_alignment_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># Photo alignment processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span>
+<span class="nt">proc_camera_stations</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total number of aligned, as stated in the Agisoft Metashape processing report files.</span>
+<span class="nt">proc_camera_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total error of the cameras, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">proc_coverage_area</span><span class="p">:</span><span class="w">  </span><span class="c1"># Area covered by the DOMs footprint, as stated in the Agisoft Metashape processing report files.. Unit: km2</span>
+<span class="nt">proc_dc_filter_conf_min</span><span class="p">:</span><span class="w">  </span><span class="c1"># Minimum dense cloud confidence value used for dense cloud filtering.</span>
+<span class="nt">proc_dem_point_density</span><span class="p">:</span><span class="w">  </span><span class="c1"># Point density of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: points/m2</span>
+<span class="nt">proc_dem_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># Resolution of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">proc_depth_map_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># Depth map processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span>
+<span class="nt">proc_flying_altitude</span><span class="p">:</span><span class="w">  </span><span class="c1"># Average distance between the camera and the object, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">proc_gcp_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total error of the georeferencing control points, as stated in the Agisoft Metashape processing report files.. Unit: cm</span>
+<span class="nt">proc_georeferencing_count</span><span class="p">:</span><span class="w">  </span><span class="c1"># Number of ground control/georeferencing points used for processing.</span>
+<span class="nt">proc_georeferencing_crs_epsg</span><span class="p">:</span><span class="w">  </span><span class="c1"># EPSG crs code used by the data used for georeferencing.</span>
+<span class="nt">proc_georeferencing_type</span><span class="p">:</span><span class="w">  </span><span class="c1"># Type of data/points used for georeferencing. Marker type and version (e.g., Aruco DICT_6X6_250) should be included.</span>
+<span class="nt">proc_ground_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># Ground resolution of the DOM, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">proc_mesh_filter_con_comp</span><span class="p">:</span><span class="w"> </span><span class="c1"># Mesh filter value for connected component.</span>
+<span class="nt">proc_sc_filter_proj_acc</span><span class="p">:</span><span class="w"> </span><span class="c1"># Sparse cloud filter value for projection accuracy.</span>
+<span class="nt">proc_sc_filter_recon_uncert</span><span class="p">:</span><span class="w"> </span><span class="c1"># Sparse cloud filter value for reconstruction uncertainty.</span>
+<span class="nt">proc_sc_filter_reproj_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Sparse cloud filter value for reprojection error.</span>
+<span class="nt">proc_software</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of software used for processing.</span>
+<span class="nt">proc_software_version</span><span class="p">:</span><span class="w">  </span><span class="c1"># Software version used for processing, including build number.</span>
+<span class="nt">publ_embargo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># Currently under discussion.. Unit: months</span>
+<span class="nt">publ_related_identifiers</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identifier</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">relation</span><span class="p">:</span><span class="w"> </span><span class="c1"># Please visit the https://developers.zenodo.org/ for examples.</span>
+<span class="nt">publ_sketchfab_id</span><span class="p">:</span><span class="w">  </span><span class="c1"># integer number associated with the data entry on the sketchfab. https://sketchfab.com/models/{SketchFab ID}</span>
+<span class="nt">publ_v3geo_model</span><span class="p">:</span><span class="w"> </span><span class="c1"># The V3Geo model ID (obtained after submission on V3Geo)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details><div class="tip admonition">
+<p class="admonition-title">Submission to Sketchfab/V3Geo</p>
+<p>Upon submission of the data sets to Svalbox it is not needed to submit your model to SketchFab for online viewing.
+The Svalbox data managers will take care of submitting the 3D model to SketchFab as it forms the backbone of interacting with the model.
+If desired, users are encouraged to refer to the V3Geo uploading tutorial on how to create a model entry in V3Geo <a class="reference external" href="https://v3geo.com/contribute">here</a>.</p>
+</div>
+<p>The data set is now ready to be submitted for curation by the Svalbox data management team.
+Head over to Zenodo and follow the <a class="reference internal" href="#zenodo-submission"><span class="std std-ref">Zenodo and data submission</span></a> section below.</p>
+</section>
+</section>
+</section>
+<section id="zenodo-and-data-submission">
+<span id="zenodo-submission"></span><h2>Zenodo and data submission<a class="headerlink" href="#zenodo-and-data-submission" title="Link to this heading">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If at any stage you wish to take a break, simply click the <em>Save draft</em> option.
+This saves all current progress and simultaneously performs a form-check.
+That means that it checks all input metadata whether it fits the corresponding form/entry.
+Play safe and save often! :)</p>
+</div>
+<figure class="align-default" id="zenodo-new-upload">
+<img alt="_images/zenodo-new-upload.gif" src="_images/zenodo-new-upload.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Proceed by creating a new upload.</span><a class="headerlink" href="#zenodo-new-upload" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="zenodo-new-upload-add-files">
+<img alt="_images/zenodo-new-upload_add-files.gif" src="_images/zenodo-new-upload_add-files.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Proceed by uploading your standardised data folders.</span><a class="headerlink" href="#zenodo-new-upload-add-files" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="zenodo-new-upload-add-metadata">
+<img alt="_images/zenodo-new-upload_add-metadata.gif" src="_images/zenodo-new-upload_add-metadata.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Then generate a DOI if the data set does not yet have one, give the data set a title, and insert the publication date.</span><a class="headerlink" href="#zenodo-new-upload-add-metadata" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="zenodo-new-upload-add-metadata-author">
+<img alt="_images/zenodo-new-upload_add-metadata-author.gif" src="_images/zenodo-new-upload_add-metadata-author.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Then add each <em>Creator</em> with their affiliations.
+This can be done by searching for their name, alternatively by filling out each field manually.
+Once done, press save.</span><a class="headerlink" href="#zenodo-new-upload-add-metadata-author" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="_images/zenodo-new-upload_add-metadata-desc.gif" src="_images/zenodo-new-upload_add-metadata-desc.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Do not forget to add a placeholder description - though keep in mind that this will be updated by the data managers.
+Also make sure to select the licenses that will apply to the data.
+The Creative Commons licences are a good starting point to choose from, and allow for different permissions.
+If you are not sure which one to apply, take a look at their descriptions <a class="reference external" href="https://creativecommons.org/share-your-work/cclicenses/">here</a>.
+Make sure you only have selected a single license!</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-the-recommended-information-section admonition">
+<p class="admonition-title">The <em>Recommended information</em> section</p>
+<p>Although not required by Zenodo, it helps filling out as much as you can, including in the <em>Recommended information</em> section.
+At the very least, try and add any other contributors that helped you with the data.
+Similarly, add all data acquisition dates.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to add Svalbox to the <em>Publisher</em> field.
+Otherwise you will be greeted with an error in the next step.</p>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Finalise the upload</p>
+<figure class="align-default" id="zenodo-new-upload-select-community">
+<img alt="_images/zenodo-new-upload_select-community.gif" src="_images/zenodo-new-upload_select-community.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Make sure to select the Svalbox community.
+Your <em>Publish</em> button now automatically changes to <em>Submit for review</em>, which is exactly what you want.</span><a class="headerlink" href="#zenodo-new-upload-select-community" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="zenodo-new-upload-submit">
+<img alt="_images/zenodo-new-upload_submit.gif" src="_images/zenodo-new-upload_submit.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Finally, select the <em>Submit for review</em> button.
+Check both boxes and leave a message for the data managers if you like.
+Then submit your data set for review.
+Give it a couple of days, and the data management team will be in touch through the requests discussion page.</span><a class="headerlink" href="#zenodo-new-upload-submit" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to the Svalbox uploading tutorial</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="manage-zenodo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Zenodo data management</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-digital-outcrop-data">Submitting digital outcrop data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-data-package">Creating the data package</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standardised-data-folder-structure">Standardised data folder structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-configuration-file">The configuration file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zenodo-and-data-submission">Zenodo and data submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Betlem
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

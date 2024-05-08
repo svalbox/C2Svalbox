@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Svaldropbox &#8212; Svalbox Uploading Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'svaldropbox';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NiceGUI-Photosphere" href="nicegui.html" />
+    <link rel="prev" title="Svalbox DB management" href="manage-db.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.webp" class="logo__image only-light" alt="Svalbox Uploading Tutorial - Home"/>
+    <script>document.write(`<img src="_static/logo.webp" class="logo__image only-dark" alt="Svalbox Uploading Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to the Svalbox uploading tutorial
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing data to the Svalbox project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Manage</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="manage-zenodo.html">Zenodo data management</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="manage-db.html">Svalbox DB management</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Svaldropbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nicegui.html">NiceGUI-Photosphere</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="softwares.html">Softwares</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsvaldropbox.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/svaldropbox.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Svaldropbox</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-processing-ipynb">batch_processing.ipynb</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-password-file">environment password file</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-the-database">Updating the database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finalise-the-upload">Finalise the upload</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="svaldropbox">
+<span id="id1"></span><h1>Svaldropbox<a class="headerlink" href="#svaldropbox" title="Link to this heading">#</a></h1>
+<p>Svaldropbox is written in Python code and can be downloaded from the Svaldropbox repository on the Svalbox organisation GitHub:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">svalbox</span><span class="o">/</span><span class="n">svaldropbox</span>
+</pre></div>
+</div>
+<p>It is important to install the correct Python codes and libraries, and for that reason we have put together an environment file.
+An environment file results in an exact copy of another person’s working environment, thus saving time!</p>
+<div class="seealso admonition">
+<p class="admonition-title">Requires Python installation</p>
+<p>Please visit the <a class="reference internal" href="softwares.html#software-python-installation"><span class="std std-ref">Python</span></a> tutorial on how to set up a dedicated environment and install Python.
+This is needed for the code to work.
+Make sure to install the Svaldropbox environment in conda.</p>
+</div>
+<section id="jupyter-notebook">
+<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Link to this heading">#</a></h2>
+<p>Open Visual Studio Code, then open the folder/directory where you placed the Svaldropbox repository.</p>
+<figure class="align-default" id="vsc-folder-open">
+<img alt="_images/vsc-folder_open.gif" src="_images/vsc-folder_open.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Launch VSC and open the correct folder.</span><a class="headerlink" href="#vsc-folder-open" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will be using the Batch uploader to add Svalbox digital data sets to the Svalbox Digital Model Database.
+Proceed by opening the <em>batch_processing.ipynb</em> file.
+Then select the correct runtime environment for it, being the <em>svaldropbox</em> environment we created earlier <a class="reference internal" href="#vsc-select-file"><span class="std std-numref">Fig. 13</span></a>.</p>
+<figure class="align-default" id="vsc-select-file">
+<img alt="_images/vsc-select_file.gif" src="_images/vsc-select_file.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Double click a file to open it for editing/running.
+Make sure to select the correct Python environment (in this case svaldropbox) from the <em>Interpreter</em> dropdown.</span><a class="headerlink" href="#vsc-select-file" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="batch-processing-ipynb">
+<span id="ipynb-batch"></span><h3>batch_processing.ipynb<a class="headerlink" href="#batch-processing-ipynb" title="Link to this heading">#</a></h3>
+<p>The Batch_processing.ipynb file contains 3 so-called code blocks.
+Each is discussed briefly below.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Imports, credentials, logging</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span><span class="s1">&#39;gui&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()))</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span><span class="p">,</span> <span class="n">find_dotenv</span><span class="p">,</span> <span class="n">dotenv_values</span>
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">dotenv_values</span><span class="p">(</span><span class="s2">&quot;../.env&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">API.batch</span> <span class="k">as</span> <span class="nn">batch</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> </span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s1">&#39;%I:%M:%S&#39;</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first code block sets the correct system paths and imports various libraries that are needed for running the batch uploader (first 3 lines).
+The code block then loads credentials from an .env file in lines 5 and 6.
+The code block also imports the batch uploader script from the Svaldropbox API library, and then sets up basic logging (lines 8-12).</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Run batch.command_line</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">command_line</span><span class="p">(</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;SVALDROPBOX_USERNAME&quot;</span><span class="p">],</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;SVALDROPBOX_PASSWORD&quot;</span><span class="p">],</span>
+    <span class="n">host</span> <span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="c1"># if running remotely on the UNIS network, replace &quot;localhost&quot; with &quot;svalbox&quot;</span>
+    <span class="n">port</span> <span class="o">=</span><span class="s2">&quot;5433&quot;</span><span class="p">,</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This code block initialises the batch class and sets up the environment for updating the databases.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Load models</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span><span class="o">.</span><span class="n">load_from_folder</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">svalbox\Svalbox_DB\curated\svaldropbox&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This code block reads all DOM configuration files described in <a class="reference internal" href="contributing.html#model-configuration-file"><span class="std std-ref">The configuration file</span></a> that are placed in the specified folder.
+It goes through these one by one and adds them to the Svalbox databases.
+If problems arise, it will move the config folder to a labeled “failed”, otherwise it places the processed configurations in “success”.</p>
+</div>
+</div>
+<section id="environment-password-file">
+<h4>environment password file<a class="headerlink" href="#environment-password-file" title="Link to this heading">#</a></h4>
+<p>As seen in the code, the code assumes that a specific .env file is present in the root folder of your svaldropbox folder.
+You should also have noticed by now that this file is not found in the Github repository - and with good reason!
+This file contains your <em>secrets</em> (i.e., database username and password access), and should never be uploaded.
+Your secrets are found in the passwordmanager, and will need to be copied over into your very own .env file.</p>
+<figure class="align-default" id="vsc-env-file">
+<img alt="_images/vsc-env_file.gif" src="_images/vsc-env_file.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Creating the <em>.env</em> file in the project root.</span><a class="headerlink" href="#vsc-env-file" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Right click the explorer within VSC to create a new file in the root.
+Give it the <em>.env</em> name and copy paste in the information below.
+Then modify your username and password (including removing the brackets) before saving.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Settings</span>
+<span class="n">SVALDROPBOX_USERNAME</span><span class="o">=</span><span class="p">{</span><span class="n">svaldropbox</span> <span class="n">username</span><span class="p">}</span>
+<span class="n">SVALDROPBOX_PASSWORD</span><span class="o">=</span><span class="p">{</span><span class="n">svaldropbox</span> <span class="n">password</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-the-database">
+<h4>Updating the database<a class="headerlink" href="#updating-the-database" title="Link to this heading">#</a></h4>
+<p>You are now ready to upload the data to the databases.
+Place the <a class="reference internal" href="contributing.html#model-configuration-file"><span class="std std-ref">The configuration file</span></a> files in the directory specified in <a class="reference internal" href="#ipynb-batch"><span class="std std-ref">batch_processing.ipynb</span></a> code block 3.
+Then run each of the code blocks by pressing <em>Run All</em> in the upper menu.</p>
+<figure class="align-default" id="vsc-batch-run-all">
+<img alt="_images/vsc-batch_run_all.gif" src="_images/vsc-batch_run_all.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Running all 3 code blocks without error.
+In this case, no config files were found in the specified folder (as reported by the logging).</span><a class="headerlink" href="#vsc-batch-run-all" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If all went well, you should see information be printed below each code block.
+The model outlines should also show up on <a class="reference external" href="http://Svalbox.no/map">Svalbox.no/map</a>, if the uploaded data included DOMs.</p>
+<div class="attention admonition">
+<p class="admonition-title">Experiencing issues?</p>
+<p>The scripts notify you of any issues encountered in the files.
+Most issues are so-called human errors; these include mistakes and typos in the configuration file, or for example specifying the wrong folder in block 3.
+Other issues may be harder to understand without looking at the code underneath.
+If such errors occur, it is recommended to take a screenshot of the error message and post this in the Github Svaldropbox bug tracker.
+That way someone can take a look at what is going on and help out, possibly by updating the code.</p>
+<p>Visit the tracker here: <a class="github reference external" href="https://github.com/svalbox/svaldropbox/issues">svalbox/svaldropbox#issues</a></p>
+</div>
+</section>
+<section id="finalise-the-upload">
+<h4>Finalise the upload<a class="headerlink" href="#finalise-the-upload" title="Link to this heading">#</a></h4>
+<p>Once you have verified the database has been successfully and correctly updated, it is time to head back to Zenodo.
+Replace the old title with the Svalbox database ID, which is in the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Svalbox</span><span class="o">-</span><span class="p">{</span><span class="nb">type</span><span class="p">}</span><span class="n">_</span><span class="p">{</span><span class="n">year</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">number</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>in which {type} can be either DOM or DCM, {year} corresponds to the year of acquisition, and {number} corresponds to the number of said data set that was uploaded.</p>
+<p>So, the 40th DOM uploaded in 2020 would get the following name: Svalbox-DOM_2020-0040.</p>
+<p>Once all is verified and updated, press <em>Accept and publish</em> to finalise the upload request.
+The data is now FAIRly available through Zenodo and registered in the Svalbox databases - well done!</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="manage-db.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Svalbox DB management</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nicegui.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NiceGUI-Photosphere</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-processing-ipynb">batch_processing.ipynb</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-password-file">environment password file</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-the-database">Updating the database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#finalise-the-upload">Finalise the upload</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peter Betlem
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
