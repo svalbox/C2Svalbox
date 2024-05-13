@@ -101,7 +101,7 @@ Copy this over into your favourite file editing application, fill out the detail
 acq_camera_lens:  # Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm
 acq_camera_model:  # Camera model as indicated in the Agisoft Metashape processing report.
 acq_date:  # Acquisition date of data, in DD.MM.YYYY format.
-acq_georeferencing: built-in GPS # STRING, pick: built-in GPS, dGPS, GCPs, GCPs/GPS, GCPs/dGPS
+acq_georeferencing: built-in GNSS # STRING, pick: built-in GNSS, dGNSS, GCPs, GCPs/GNSS, GCPs/dGNSS
 comments:  # comments for data entry
 cover:
 - Category: Snow
