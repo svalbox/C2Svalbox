@@ -156,7 +156,9 @@ Visit the tracker here: https://github.com/svalbox/svaldropbox/issues
 #### Finalise the upload
 
 Once you have verified the database has been successfully and correctly updated, it is time to head back to Zenodo.
-Replace the old title with the Svalbox database ID, which is in the following format:
+As part of the uploading procedure to the database, Zenodo's metadata has been corrected and updated.
+Please verify that this is indeed the case.
+A quick way to check is to check the Title, which should resemble something like this:
 
 ```
 Svalbox-{type}_{year}-{number}
@@ -165,6 +167,18 @@ in which {type} can be either DOM or DCM, {year} corresponds to the year of acqu
 
 So, the 40th DOM uploaded in 2020 would get the following name: Svalbox-DOM_2020-0040.
 
-Once all is verified and updated, press *Accept and publish* to finalise the upload request.
+````{admonition} Reupload changed data sets!
+:class: attention
+
+As part of the database procedure, several of the files have been updated that thus need to be replaced in Zenodo.
+The same goes for files that were manually edited - upload these again, too!
+Files that typically change:
+- metashape.zip
+- both processing reports
+- export.zip
+
+````
+
+Once all is verified and changed files have been updated, you may finally press *Accept and publish* to finalise the upload request.
 The data is now FAIRly available through Zenodo and registered in the Svalbox databases - well done!
 

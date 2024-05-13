@@ -540,13 +540,26 @@ That way someone can take a look at what is going on and help out, possibly by u
 <section id="finalise-the-upload">
 <h4>Finalise the upload<a class="headerlink" href="#finalise-the-upload" title="Link to this heading">#</a></h4>
 <p>Once you have verified the database has been successfully and correctly updated, it is time to head back to Zenodo.
-Replace the old title with the Svalbox database ID, which is in the following format:</p>
+As part of the uploading procedure to the database, Zenodo’s metadata has been corrected and updated.
+Please verify that this is indeed the case.
+A quick way to check is to check the Title, which should resemble something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Svalbox</span><span class="o">-</span><span class="p">{</span><span class="nb">type</span><span class="p">}</span><span class="n">_</span><span class="p">{</span><span class="n">year</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">number</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>in which {type} can be either DOM or DCM, {year} corresponds to the year of acquisition, and {number} corresponds to the number of said data set that was uploaded.</p>
 <p>So, the 40th DOM uploaded in 2020 would get the following name: Svalbox-DOM_2020-0040.</p>
-<p>Once all is verified and updated, press <em>Accept and publish</em> to finalise the upload request.
+<div class="attention admonition">
+<p class="admonition-title">Reupload changed data sets!</p>
+<p>As part of the database procedure, several of the files have been updated that thus need to be replaced in Zenodo.
+The same goes for files that were manually edited - upload these again, too!
+Files that typically change:</p>
+<ul class="simple">
+<li><p>metashape.zip</p></li>
+<li><p>both processing reports</p></li>
+<li><p>export.zip</p></li>
+</ul>
+</div>
+<p>Once all is verified and changed files have been updated, you may finally press <em>Accept and publish</em> to finalise the upload request.
 The data is now FAIRly available through Zenodo and registered in the Svalbox databases - well done!</p>
 </section>
 </section>
