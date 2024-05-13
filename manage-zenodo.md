@@ -73,13 +73,13 @@ If there are large errors in the data, notify the creator and ask them to fix th
 :class: seealso
 
 Once you have downloaded the full data set and unzipped all folders into the standardised environment, it it time to head over to the [](svalbox:db:management) tutorial.
-That tutorial will 
+That tutorial will explain how to process the data and upload the entry to the Svalbox Digital Model Database.
 
 ````
 
 ````{admonition} Successfully updated the Svalbox DB?
 :class: attention
 
-Only once all the steps detailed in [](svalbox:db:management) have been completed, and the database entry has been verified, should you press *Accept and publish*.
+Only once all the steps detailed in [](svalbox:db:management) have been completed, and the database entry has been updated with the new files/has been verified, should you press *Accept and publish*.
 That is the final step after which the data can no longer be updated/modified.
 ````

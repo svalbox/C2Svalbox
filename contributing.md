@@ -202,19 +202,28 @@ name: zenodo-new-upload
 Proceed by creating a new upload.
 ```
 
-```{figure} ./figs/zenodo-new-upload_add-files.gif
----
-name: zenodo-new-upload_add-files
----
-Proceed by uploading your standardised data folders.
-```
-
 ```{figure} ./figs/zenodo-new-upload_add-metadata.gif
 ---
 name: zenodo-new-upload_add-metadata
 ---
-Then generate a DOI if the data set does not yet have one, give the data set a title, and insert the publication date.
+First generate a DOI if the data set does not yet have one, give the data set a title, and insert the publication date.
 ```
+
+`````{figure} ./figs/zenodo-new-upload_add-files.gif
+---
+name: zenodo-new-upload_add-files
+---
+Then proceed by uploading your standardised data folders.
+
+````{admonition} Svalbox Curators
+:class: attention
+
+Svalbox Curators should wait with uploading all files until they have checked the data sets and run the database uploading scripts.
+That way uploads only have to be done once. Please see the relevant sections on how to do this.
+
+````
+
+`````
 
 ```{figure} ./figs/zenodo-new-upload_add-metadata-author.gif
 ---
