@@ -47,6 +47,14 @@ The following steps are recommended:
 1. Check the folder structure. Are all images there and in the right folders? Is there GNSS/gcp data? Make sure it is correctly placed. Are the processing reports present in both .html and .pdf formats?
 2. Open the Metashape project. Make sure all files are correctly linked, no missing images are present, and only one chunk exists per project. Also generate the processing reports, if needed.
 3. Check the export folder. If needed, export the mesh/model in .obj format using CRS = EPSG:32633 (the CRS used by the Svalbox DB).
+
+
+```{admonition} Include the correct model/tiled model data in the export
+:class: attention
+
+Make sure to include both an .obj (+ textures!; EPSG:32633 crs; model files) and a .3tz format (tiled model files; *Cesium 3D Tiles 1.1* format in Metashape export dialog).
+```
+
 4. Update the config.yml file. Add in the DOI (that means not doi.org/, but only the part that follows that) and update local path links where applicable.
 
 Note the config.yml file path - as it is needed in the next steps.

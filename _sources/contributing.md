@@ -77,6 +77,13 @@ GNSS and gcps (ground control point data) are optional, but should include GNSS 
 Each of the folders must be zipped prior to uploading to maintain the standardised folder structure.
 Files, such as the processing reports, overview photo and description file are to be uploaded separately.
 
+
+```{admonition} Include the correct model/tiled model data in the export
+:class: attention
+
+Make sure to include both an .obj (+ textures!; EPSG:32633 crs; model files) and a .3tz format (tiled model files; *Cesium 3D Tiles 1.1* format in Metashape export dialog).
+```
+
 (model:configuration:file)=
 #### The configuration file
 

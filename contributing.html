@@ -484,6 +484,10 @@ This always includes imagery, ideally sorted per flight/acquisition round.
 GNSS and gcps (ground control point data) are optional, but should include GNSS processing reports and quality estimates of the data when used during processing.
 Each of the folders must be zipped prior to uploading to maintain the standardised folder structure.
 Files, such as the processing reports, overview photo and description file are to be uploaded separately.</p>
+<div class="attention admonition">
+<p class="admonition-title">Include the correct model/tiled model data in the export</p>
+<p>Make sure to include both an .obj (+ textures!; EPSG:32633 crs; model files) and a .3tz format (tiled model files; <em>Cesium 3D Tiles 1.1</em> format in Metashape export dialog).</p>
+</div>
 </section>
 <section id="the-configuration-file">
 <span id="model-configuration-file"></span><h4>The configuration file<a class="headerlink" href="#the-configuration-file" title="Link to this heading">#</a></h4>
