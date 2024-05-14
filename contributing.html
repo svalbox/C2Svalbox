@@ -442,7 +442,7 @@ Show standardised folder structure<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{project_directory} (The folder with all files related to this project)
-|   overview_img.{ext}
+|   image_overview.{ext}
 |   description.txt
 ├───config.yml
 ├───data.zip
@@ -564,7 +564,7 @@ Outcrop and hand-sized samples</label><div class="sd-tab-content docutils">
 <span class="nt">proc_flying_altitude</span><span class="p">:</span><span class="w">  </span><span class="c1"># Average distance between the camera and the object, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
 <span class="nt">proc_gcp_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total error of the georeferencing control points, as stated in the Agisoft Metashape processing report files.. Unit: cm</span>
 <span class="nt">proc_georeferencing_count</span><span class="p">:</span><span class="w">  </span><span class="c1"># Number of ground control/georeferencing points used for processing.</span>
-<span class="nt">proc_georeferencing_crs_epsg</span><span class="p">:</span><span class="w">  </span><span class="c1"># EPSG crs code used by the data used for georeferencing.</span>
+<span class="nt">proc_georeferencing_crs_epsg</span><span class="p">:</span><span class="w">  </span><span class="c1"># EPSG crs code used by the data used for georeferencing. NEEDED!</span>
 <span class="nt">proc_georeferencing_type</span><span class="p">:</span><span class="w">  </span><span class="c1"># Type of data/points used for georeferencing. Marker type and version (e.g., Aruco DICT_6X6_250) should be included.</span>
 <span class="nt">proc_ground_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># Ground resolution of the DOM, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
 <span class="nt">proc_mesh_filter_con_comp</span><span class="p">:</span><span class="w"> </span><span class="c1"># Mesh filter value for connected component.</span>

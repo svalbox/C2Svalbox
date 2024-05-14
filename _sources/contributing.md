@@ -34,7 +34,7 @@ In its most basic form, a single digital outcrop model data set contains the fol
 ``````{dropdown} Show standardised folder structure
 ```
 {project_directory} (The folder with all files related to this project)
-|   overview_img.{ext}
+|   image_overview.{ext}
 |   description.txt
 ├───config.yml
 ├───data.zip
@@ -155,7 +155,7 @@ proc_depth_map_accuracy:  # Depth map processing value for generating depth maps
 proc_flying_altitude:  # Average distance between the camera and the object, as stated in the Agisoft Metashape processing report files.. Unit: m
 proc_gcp_total_error:  # Total error of the georeferencing control points, as stated in the Agisoft Metashape processing report files.. Unit: cm
 proc_georeferencing_count:  # Number of ground control/georeferencing points used for processing.
-proc_georeferencing_crs_epsg:  # EPSG crs code used by the data used for georeferencing.
+proc_georeferencing_crs_epsg:  # EPSG crs code used by the data used for georeferencing. NEEDED!
 proc_georeferencing_type:  # Type of data/points used for georeferencing. Marker type and version (e.g., Aruco DICT_6X6_250) should be included.
 proc_ground_resolution:  # Ground resolution of the DOM, as stated in the Agisoft Metashape processing report files.. Unit: m
 proc_mesh_filter_con_comp: # Mesh filter value for connected component.
