@@ -524,28 +524,28 @@ Show config.yml template<div class="sd-summary-down docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Outcrop and hand-sized samples</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm</span>
-<span class="nt">acq_camera_model</span><span class="p">:</span><span class="w">  </span><span class="c1"># Camera model as indicated in the Agisoft Metashape processing report.</span>
-<span class="nt">acq_date</span><span class="p">:</span><span class="w">  </span><span class="c1"># Acquisition date of data, in DD.MM.YYYY format.</span>
-<span class="nt">acq_georeferencing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">built-in GNSS</span><span class="w"> </span><span class="c1"># STRING, pick: built-in GNSS, dGNSS, GCPs, GCPs/GNSS, GCPs/dGNSS</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">acq_camera_lens</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Camera lens as indicated in the Agisoft Metashape processing report.. Unit: mm</span>
+<span class="nt">acq_camera_model</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Camera model as indicated in the Agisoft Metashape processing report.</span>
+<span class="nt">acq_date</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Acquisition date of data, in DD.MM.YYYY format.</span>
+<span class="nt">acq_georeferencing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">built-in GNSS</span><span class="w"> </span><span class="c1"># [Req] STRING, pick: built-in GNSS, dGNSS, GCPs, GCPs/GNSS, GCPs/dGNSS</span>
 <span class="nt">comments</span><span class="p">:</span><span class="w">  </span><span class="c1"># comments for data entry</span>
 <span class="nt">cover</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Snow</span>
-<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span>
+<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># [Req] pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scree</span>
-<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span>
+<span class="w">  </span><span class="nt">Extent</span><span class="p">:</span><span class="w"> </span><span class="c1"># [Req] pick from 0-5; 0=0%, 1=0-20%, 2=20-40%, 3=40-60%, 4=60-80%, 5=80-100%</span>
 <span class="nt">data_author</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># affiliations of author in comma-separated list</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of author</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] affiliations of author in comma-separated list</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] name of author</span>
 <span class="w">  </span><span class="nt">orcid</span><span class="p">:</span><span class="w">  </span><span class="c1"># orcid ID of author</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># affiliations of author in comma-separated list</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of author</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">affiliation</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] affiliations of author in comma-separated list</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] name of author</span>
 <span class="w">  </span><span class="nt">orcid</span><span class="p">:</span><span class="w">  </span><span class="c1"># copy paste for number of authors applicable.</span>
 <span class="nt">data_doi</span><span class="p">:</span><span class="w">  </span><span class="c1"># doi number (without https://doi.org/)</span>
-<span class="nt">data_model_file_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">filename</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.obj</span><span class="w"> </span><span class="c1"># STRING with model file name and obj extension.</span>
-<span class="nt">data_model_crs_epsg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32633</span><span class="w"> </span><span class="c1"># INT EPSG number of model CRS</span>
-<span class="nt">data_project_path</span><span class="p">:</span><span class="w">  </span><span class="c1"># STRING with full path to the standardized data project.</span>
-<span class="nt">data_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOM</span><span class="w"> </span><span class="c1"># Data type, defaults to DOM. Other options include DCM, DSM</span>
+<span class="nt">data_model_file_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">filename</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.obj</span><span class="w"> </span><span class="c1"># [Req] STRING with model file name and obj extension.</span>
+<span class="nt">data_model_crs_epsg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32633</span><span class="w"> </span><span class="c1"># [Req] INT EPSG number of model CRS</span>
+<span class="nt">data_project_path</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] STRING with full path to the standardized data project.</span>
+<span class="nt">data_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOM</span><span class="w"> </span><span class="c1"># [Req] Data type, defaults to DOM. Other options include DCM, DSM</span>
 <span class="nt">funding</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">grant_number</span><span class="p">:</span><span class="w">  </span><span class="c1"># grant number or name associated with the grant</span>
 <span class="w">  </span><span class="nt">organization</span><span class="p">:</span><span class="w">  </span><span class="c1"># organization identifier</span>
@@ -565,36 +565,36 @@ Outcrop and hand-sized samples</label><div class="sd-tab-content docutils">
 <span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Category</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick from Structure/Sedimentology/Metamorphic/Igneous/Quaternary</span>
 <span class="w">  </span><span class="nt">Subcategory</span><span class="p">:</span><span class="w"> </span><span class="c1"># Pick matching Subcategory from [Structure/]Dikes/Sills/Karsts/Folds/Extensional/Compressional/Faults/Joints/Fractures/Veins/Inversion or [Sedimentology/]Clastic/Carbonates and Evaporites or [Igneous/]Intrusive/Extrusive (select as many combinations as applicable)</span>
-<span class="nt">keywords</span><span class="p">:</span><span class="w">  </span><span class="c1"># list of keywords separated by ;. Last item without.</span>
-<span class="nt">location_island</span><span class="p">:</span><span class="w">  </span><span class="c1"># Island on which the locality is found, pick from Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span>
-<span class="nt">location_land</span><span class="p">:</span><span class="w">  </span><span class="c1"># Land in which the locality is found, pick from Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land</span>
-<span class="nt">location_locality</span><span class="p">:</span><span class="w">  </span><span class="c1"># Location/area in which the locality is found. This should only contain valley/mountain names and not contain directions.</span>
-<span class="nt">model_description</span><span class="p">:</span><span class="w">  </span><span class="c1"># Brief (geological) description of the data.</span>
-<span class="nt">proc_alignment_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># Photo alignment processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span>
-<span class="nt">proc_camera_stations</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total number of aligned, as stated in the Agisoft Metashape processing report files.</span>
-<span class="nt">proc_camera_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total error of the cameras, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
-<span class="nt">proc_coverage_area</span><span class="p">:</span><span class="w">  </span><span class="c1"># Area covered by the DOMs footprint, as stated in the Agisoft Metashape processing report files.. Unit: km2</span>
-<span class="nt">proc_dc_filter_conf_min</span><span class="p">:</span><span class="w">  </span><span class="c1"># Minimum dense cloud confidence value used for dense cloud filtering.</span>
-<span class="nt">proc_dem_point_density</span><span class="p">:</span><span class="w">  </span><span class="c1"># Point density of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: points/m2</span>
-<span class="nt">proc_dem_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># Resolution of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
-<span class="nt">proc_depth_map_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># Depth map processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span>
-<span class="nt">proc_flying_altitude</span><span class="p">:</span><span class="w">  </span><span class="c1"># Average distance between the camera and the object, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">keywords</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] list of keywords separated by ;. Last item without.</span>
+<span class="nt">location_island</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Island on which the locality is found, pick from Hopen / Spitsbergen / Kong Karls Land / Edgeøya / Barentsøya / Tusenøyane / Nordaustlandet / Kvitøya / Prins Karls Forland / Bjørnøya / Other</span>
+<span class="nt">location_land</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Land in which the locality is found, pick from Albert I Land / Andrée Land / Bünsow Land / Dickson Land / Haakon VII Land / Heer Land / James I Land / Nathorst Land / Nordenskiöld Land / Ny-Friesland / Olav V Land / Oscar II Land / Sabine Land / Sørkapp Land / Torell Land / Wedel Jarlsberg Land / Gustav Adolf Land / Gustav V Land / Orvin Land</span>
+<span class="nt">location_locality</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Location/area in which the locality is found. This should only contain valley/mountain names and not contain directions.</span>
+<span class="nt">model_description</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Brief (geological) description of the data.</span>
+<span class="nt">proc_alignment_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Photo alignment processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span>
+<span class="nt">proc_camera_stations</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Total number of aligned, as stated in the Agisoft Metashape processing report files.</span>
+<span class="nt">proc_camera_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Total error of the cameras, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">proc_coverage_area</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Area covered by the DOMs footprint, as stated in the Agisoft Metashape processing report files.. Unit: km2</span>
+<span class="nt">proc_dc_filter_conf_min</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Minimum dense cloud confidence value used for dense cloud filtering.</span>
+<span class="nt">proc_dem_point_density</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Point density of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: points/m2</span>
+<span class="nt">proc_dem_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Resolution of the DEM, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">proc_depth_map_accuracy</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Depth map processing value for generating depth maps. Pick from Highest, High, Medium, Low, Lowest.</span>
+<span class="nt">proc_flying_altitude</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Average distance between the camera and the object, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
 <span class="nt">proc_gcp_total_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Total error of the georeferencing control points, as stated in the Agisoft Metashape processing report files.. Unit: cm</span>
 <span class="nt">proc_georeferencing_count</span><span class="p">:</span><span class="w">  </span><span class="c1"># Number of ground control/georeferencing points used for processing.</span>
-<span class="nt">proc_georeferencing_crs_epsg</span><span class="p">:</span><span class="w">  </span><span class="c1"># EPSG crs code used by the data used for georeferencing. NEEDED!</span>
+<span class="nt">proc_georeferencing_crs_epsg</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] EPSG crs code used by the data used for georeferencing. NEEDED!</span>
 <span class="nt">proc_georeferencing_type</span><span class="p">:</span><span class="w">  </span><span class="c1"># Type of data/points used for georeferencing. Marker type and version (e.g., Aruco DICT_6X6_250) should be included.</span>
-<span class="nt">proc_ground_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># Ground resolution of the DOM, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
-<span class="nt">proc_mesh_filter_con_comp</span><span class="p">:</span><span class="w"> </span><span class="c1"># Mesh filter value for connected component.</span>
-<span class="nt">proc_sc_filter_proj_acc</span><span class="p">:</span><span class="w"> </span><span class="c1"># Sparse cloud filter value for projection accuracy.</span>
-<span class="nt">proc_sc_filter_recon_uncert</span><span class="p">:</span><span class="w"> </span><span class="c1"># Sparse cloud filter value for reconstruction uncertainty.</span>
-<span class="nt">proc_sc_filter_reproj_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># Sparse cloud filter value for reprojection error.</span>
-<span class="nt">proc_software</span><span class="p">:</span><span class="w">  </span><span class="c1"># name of software used for processing.</span>
-<span class="nt">proc_software_version</span><span class="p">:</span><span class="w">  </span><span class="c1"># Software version used for processing, including build number.</span>
-<span class="nt">publ_embargo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># Currently under discussion.. Unit: months</span>
+<span class="nt">proc_ground_resolution</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Ground resolution of the DOM, as stated in the Agisoft Metashape processing report files.. Unit: m</span>
+<span class="nt">proc_mesh_filter_con_comp</span><span class="p">:</span><span class="w"> </span><span class="c1"># [Req] Mesh filter value for connected component.</span>
+<span class="nt">proc_sc_filter_proj_acc</span><span class="p">:</span><span class="w"> </span><span class="c1"># [Req] Sparse cloud filter value for projection accuracy.</span>
+<span class="nt">proc_sc_filter_recon_uncert</span><span class="p">:</span><span class="w"> </span><span class="c1"># [Req] Sparse cloud filter value for reconstruction uncertainty.</span>
+<span class="nt">proc_sc_filter_reproj_error</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Sparse cloud filter value for reprojection error.</span>
+<span class="nt">proc_software</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] name of software used for processing.</span>
+<span class="nt">proc_software_version</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] Software version used for processing, including build number.</span>
+<span class="nt">publ_embargo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># [Req] Currently under discussion.. Unit: months</span>
 <span class="nt">publ_related_identifiers</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identifier</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">relation</span><span class="p">:</span><span class="w"> </span><span class="c1"># Please visit the https://developers.zenodo.org/ for examples.</span>
-<span class="nt">publ_sketchfab_id</span><span class="p">:</span><span class="w">  </span><span class="c1"># integer number associated with the data entry on the sketchfab. https://sketchfab.com/models/{SketchFab ID}</span>
+<span class="nt">publ_sketchfab_id</span><span class="p">:</span><span class="w">  </span><span class="c1"># [Req] integer number associated with the data entry on the sketchfab. https://sketchfab.com/models/{SketchFab ID}</span>
 <span class="nt">publ_v3geo_model</span><span class="p">:</span><span class="w"> </span><span class="c1"># The V3Geo model ID (obtained after submission on V3Geo)</span>
 </pre></div>
 </div>
